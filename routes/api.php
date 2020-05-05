@@ -13,6 +13,36 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+
+Route::group([
+    'prefix' => 'v1',
+    'namespace' => 'Api'
+], function(){
+
+    Route::get('/tenants/{uuid}', 'TenantApicontroller@show');
+    Route::get('/tenants', 'TenantApicontroller@index');
+
+    Route::get('/categories/{url}', 'CategoryApiController@show');
+    Route::get('/categories', 'CategoryApiController@categoriesByTenant');
+
+    Route::get('/tables/{id}', 'TableApiController@show');
+    Route::get('/tables', 'TableApiController@tablesByTenant');
+
+    Route::get('/products/{flag}', 'ProductApiController@show');
+    Route::get('/products', 'ProductApiController@productsByTenant');
+
+    Route::post('/client', 'Auth\RegisterController@store');
+
+    Route::post('/sanctum/token', 'Auth\AuthClientController@auth');
+
+    Route::group(['middleware' => "auth:sanctum"], function(){
+        Route::get('auth/me', 'Auth\AuthClientController@me');
+        Route::post('auth/logout', 'Auth\AuthClientController@logout');
+    });
+
+
 });
+
+
+
