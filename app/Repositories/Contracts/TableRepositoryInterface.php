@@ -5,7 +5,7 @@ interface TableRepositoryInterface{
 
     public function getTablesByTenantUuid(string $uuid);
     public function getTablesByTenantId(string $tenantId);
-    public function getTableById(int $id);
+    public function getTableByUuid(string $uuid);
 
 
 }

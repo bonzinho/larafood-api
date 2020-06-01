@@ -30,8 +30,8 @@ class TableApiController extends Controller
         return TableResource::collection($tables);
     }
 
-    public function show(TenantFormRequest $request, $id){
-        if(!$tables = $this->tableService->getTableById($id)){
+    public function show(TenantFormRequest $request, $identify){
+        if(!$tables = $this->tableService->getTableByUuid($identify)){
             return response()->json(['message' => 'Mesa inválida'], 404);
         }
 

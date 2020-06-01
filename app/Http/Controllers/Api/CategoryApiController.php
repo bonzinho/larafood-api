@@ -35,8 +35,8 @@ class CategoryApiController extends Controller
         return CategoryResource::collection($categories);
     }
 
-    public function show(TenantFormRequest $request, $url){
-        if(!$categories = $this->categoryService->getCategoryByUrl($url)){
+    public function show(TenantFormRequest $request, $identify){
+        if(!$categories = $this->categoryService->getCategoryByUuid($identify)){
             return response()->json(['message' => 'Empresa inválida'], 404);
         }
 

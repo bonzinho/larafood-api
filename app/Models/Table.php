@@ -19,4 +19,8 @@ class Table extends Model
             ->paginate();
         return $results;
     }
+
+    public function orders(){
+        return $this->hasMany(Order::class);
+    }
 }

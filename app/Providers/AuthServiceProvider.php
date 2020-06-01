@@ -25,6 +25,9 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if($this->app->runningInConsole()) return; // verifica se está acorrer algum comando da linha de comando se for salta fora para não dar erros
+
+
         $this->registerPolicies();
 
         $permissions = Permission::all();

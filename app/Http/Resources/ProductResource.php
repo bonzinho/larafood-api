@@ -16,9 +16,9 @@ class ProductResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'name' =>	$this->name,
+            'flag' => $this->flag,
             'description' =>	$this->description,
-            'flag' =>	$this->flag,
+            'identify' =>	$this->uuid,
             'price' =>	$this->price,
             'image' => url('storage/'. $this->image),
             'date_created' => Carbon::parse($this->created_at)->format('d/m/Y'),
