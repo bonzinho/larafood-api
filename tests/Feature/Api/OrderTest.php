@@ -150,7 +150,7 @@ class OrderTest extends TestCase
 
         $payload = [
             'token_company' => $tenant->uuid,
-            'table' => $table->name,
+            'table' => $table->uuid,
             'products' => [],
         ];
 
@@ -164,7 +164,7 @@ class OrderTest extends TestCase
         }
 
         $response = $this->postJson('/api/v1/orders', $payload);
-        //$response->dump();
+
         $response->assertStatus(201);
 
     }

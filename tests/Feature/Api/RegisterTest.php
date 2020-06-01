@@ -24,7 +24,7 @@ class RegisterTest extends TestCase
         ];
 
         $response = $this->postJson('/api/auth/register', $payload);
-        $response->dump();
+
         $response->assertStatus(422);
 
         /*->assertExactJson([
