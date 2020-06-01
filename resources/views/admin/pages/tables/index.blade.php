@@ -38,6 +38,7 @@
                             <td>{{$table->name}}</td>
                             <td>{{$table->description}}</td>
                             <td>
+                                <a href="{{route('tables.qrcode', $table->id)}}" class="btn btn-warning" target="_blank"><i class="fa fa-qrcode"></i></a>
                                 <a href="{{route('tables.show', $table->id)}}" class="btn btn-warning"><i class="fa fa-eye"></i></a>
                                 <a href="{{route('tables.edit', $table->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
                             </td>

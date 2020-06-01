@@ -42,8 +42,10 @@ Route::prefix('admin')
          * Routes Tables
         */
 
+        Route::get('tables/qrcode/{identify}', 'TableController@qrcode')->name('tables.qrcode');
         Route::resource('tables', 'TableController');
         Route::any('tables/search', 'TableController@search')->name('tables.search');
+
 
         /*
          * Product X Categories
