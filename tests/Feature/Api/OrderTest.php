@@ -150,7 +150,7 @@ class OrderTest extends TestCase
 
         $payload = [
             'token_company' => $tenant->uuid,
-            'table' => $table->uuid,
+            'table' => $table->name,
             'products' => [],
         ];
 

@@ -17,7 +17,7 @@ class EvaluationResource extends JsonResource
         return [
             'stars' => $this->stars,
             'client' => new ClientResource($this->client),
-            'order' => new OrderResource($this->order),
+            //'order' => new OrderResource($this->order),
             'comment' => $this->comment
         ];
     }
