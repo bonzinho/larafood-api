@@ -134,7 +134,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
 
     'logout_url' => 'logout',
 
@@ -173,6 +173,12 @@ return [
     */
 
     'menu' => [
+        [
+            'text' => 'Dashboard',
+            'url'  => 'admin',
+            'icon' => 'fas fa-tachometer-alt',
+            'can'  =>  'plans'
+        ],
         [
             'text' => 'Planos',
             'url'  => 'admin/plans',
